@@ -4,43 +4,41 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+import entities.Courses;
+
 public class Program {
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 
-		Set<Integer> a = new HashSet<>();
-		Set<Integer> b = new HashSet<>();
-		Set<Integer> c = new HashSet<>();
-		
+		Set<Courses> cor = new HashSet<>();
+
 		System.out.print("How many students for course A? ");
 		int n = sc.nextInt();
+
 		for (int i=0; i<n; i++) {
-			int number = sc.nextInt();
-			a.add(number);
+			int a = sc.nextInt();
+			cor.add(new Courses(a));
 		}
 
 		System.out.print("How many students for course B? ");
-		n = sc.nextInt();
-		for (int i=0; i<n; i++) {
-			int number = sc.nextInt();
-			b.add(number);
+		int n1 = sc.nextInt();
+
+		for (int i=0; i<n1; i++) {
+			int b = sc.nextInt();
+			cor.add(new Courses(b));
 		}
 
 		System.out.print("How many students for course C? ");
-		n = sc.nextInt();
-		for (int i=0; i<n; i++) {
-			int number = sc.nextInt();
-			c.add(number);
+		int n2 = sc.nextInt();
+
+		for (int i=0; i<n2; i++) {
+			int c = sc.nextInt();
+			cor.add(new Courses(c));
 		}
 		
-		Set<Integer> total = new HashSet<>(a);
-		total.addAll(b);
-		total.addAll(c);
-
-		System.out.println("Total students: " + total.size());
-
+		System.out.println("Total students: " + cor.size());
 		sc.close();
 	}
 }
